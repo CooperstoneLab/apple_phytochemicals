@@ -2,3 +2,4 @@
 *.mzML
 .vscode/settings.json
 Data/mzML/Pos/PosQC_ChromatogramDeconvPeaks_Attempt2.pdf
+Data/Tables/~$targets.xlsx
