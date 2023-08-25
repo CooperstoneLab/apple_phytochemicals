@@ -1,0 +1,40 @@
+---
+title: "Apple phytochemical targeted integration"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<img src="Figures/Apple Phytochemicals.png" align="right" height="250" style="float:right; height:250px;"/>
+
+
+This repository host the targeted integration of metabolomics data reported
+in [Bilbrey et al. (2022)](https://nph.onlinelibrary.wiley.com/doi/full/10.1111/nph.17693).
+
+The targeted integration is conducted using [ms-mint](https://github.com/LewisResearchGroup/ms-mint).
+Compound identification was conducted by comparison of samples against authentic standards, as well
+as using public availables MS/MS in GNPS.
+
+More details about the in-house MS/MS library can be found at [PhenolicsDB](https://github.com/CooperstoneLab/PhenolicsDB),
+while a representative GNPS molecular network can be found in this
+[repository](https://cytoscape.gnps2.org/process?task=1b4d04e4234d47f38ad8681da8307b91).
+
+## Pythochemical target list 
+
+Briefly, we collected full scan data $MS^1$ in both polarities (positive and negative), to achieve a greater
+metabolome coverage. In the following table you will find the list of identified metabolites in each polarity.
+
+### Negative polarity
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+
+target_neg <- read_xlsx("Data/Tables/targets.xlsx", sheet = "target_neg") %>% 
+    select(-rt_min, -rt_max) %>%
+    mutate(rt = ifelse(rt_unit %in% "min", round(rt * 60, 0), rt) ) %>% 
+    select(-rt_unit) %>% mutate(mz_mean = as.character(mz_mean))
+print(target_neg)
+```
