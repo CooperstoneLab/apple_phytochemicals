@@ -9,6 +9,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <img src="Figures/Apple Phytochemicals.png" align="right" height="250" style="float:right; height:250px;"/>
 
+Authors: $Daniel Quiroz^1$, $Jessica Coopestone^{1, 2}$
+
+Affilliations: 
+
+* $1$ Horticulture and Crop Science Department,  Ohio State University, USA
+* $2$ Food and Science Department, Ohio State University, USA
+
+
+## About this repository
 
 This repository host the targeted integration of metabolomics data reported
 in [Bilbrey et al. (2022)](https://nph.onlinelibrary.wiley.com/doi/full/10.1111/nph.17693).
@@ -26,7 +35,11 @@ while a representative GNPS molecular network can be found in this
 Briefly, we collected full scan data $MS^1$ in both polarities (positive and negative), to achieve a greater
 metabolome coverage. In the following table you will find the list of identified metabolites in each polarity.
 
+You can find the detailed analysis notebook [here](https://github.com/CooperstoneLab/apple_phytochemicals/blob/main/1_QC_targeted_integration.ipynb).
+
 ### Negative polarity
+
+#### Target list
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -38,3 +51,23 @@ target_neg <- read_xlsx("Data/Tables/targets.xlsx", sheet = "target_neg") %>%
     select(-rt_unit) %>% mutate(mz_mean = as.character(mz_mean))
 print(as.data.frame(target_neg))
 ```
+
+#### Peak shapes
+
+<img src="Figures/peaks_QC_neg.png" align="center"/>
+
+### Positive polarity
+
+#### Target list
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+target_pos <- read_xlsx("Data/Tables/targets.xlsx", sheet = "target_pos") %>% 
+    select(-rt_min, -rt_max) %>%
+    mutate(rt = ifelse(rt_unit %in% "min", round(rt * 60, 0), rt) ) %>% 
+    select(-rt_unit) %>% mutate(mz_mean = as.character(mz_mean))
+print(as.data.frame(target_pos))
+```
+
+#### Peak shapes
+
+<img src="Figures/peaks_QC_pos.png" align="center"/>
