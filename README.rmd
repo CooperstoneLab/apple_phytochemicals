@@ -36,5 +36,5 @@ target_neg <- read_xlsx("Data/Tables/targets.xlsx", sheet = "target_neg") %>%
     select(-rt_min, -rt_max) %>%
     mutate(rt = ifelse(rt_unit %in% "min", round(rt * 60, 0), rt) ) %>% 
     select(-rt_unit) %>% mutate(mz_mean = as.character(mz_mean))
-print(target_neg)
+print(as.data.frame(target_neg))
 ```
