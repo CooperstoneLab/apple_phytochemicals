@@ -3,7 +3,7 @@ Apple phytochemical targeted integration
 
 <img src="Figures/Apple Phytochemicals.png" align="right" height="250" style="float:right; height:250px;"/>
 
-Authors: $Daniel Quiroz^1$, $Jessica Coopestone^{1, 2}$
+Authors: Daniel Quiroz$^1$, Jessica Coopestone$^{1, 2}$
 
 Affilliations:
 
