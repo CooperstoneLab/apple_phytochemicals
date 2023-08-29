@@ -3,7 +3,7 @@ Apple phytochemical targeted integration
 
 <img src="Figures/Apple Phytochemicals.png" align="right" height="250" style="float:right; height:250px;"/>
 
-Authors: Daniel Quiroz$^1$, Jessica Coopestone$^{1, 2}$
+Authors: Daniel Quiroz(1), Jessica Coopestone(1,2)
 
 Affilliations:
 
@@ -29,10 +29,10 @@ representative GNPS molecular network can be found in this
 
 ## Pythochemical target list
 
-Briefly, we collected full scan data $MS^1$ in both polarities (positive
-and negative), to achieve a greater metabolome coverage. In the
-following table you will find the list of identified metabolites in each
-polarity.
+Briefly, we collected full scan data ($MS^1$) in both polarities
+(positive and negative) to achieve a greater metabolome coverage. In the
+following tables you will find the list of identified metabolites in
+each polarity.
 
 You can find the detailed analysis notebook
 [here](https://github.com/CooperstoneLab/apple_phytochemicals/blob/main/1_QC_targeted_integration.ipynb).
@@ -70,7 +70,7 @@ You can find the detailed analysis notebook
 
 #### Peak shapes
 
-<img src="Figures/peaks_QC_neg.png" align="center"/>
+<img src="Figures/peaks_QC_neg.png">
 
 ### Positive polarity
 
